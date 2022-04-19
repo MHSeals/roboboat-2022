@@ -15,6 +15,7 @@ user@host:~$ sudo apt install python3-rosdep python3-rosinstall python3-rosinsta
 user@host:~$ sudo rosdep init
 user@host:~$ rosdep update
 user@host:~$ echo "\nsource /opt/ros/noetic/setup.bash" >> ~/.bashrc    # or .zsh >> ~/.zshrc if you're using zsh, etc.
+user@host:~$ source ~/.bashrc
 ```
 
 ### Cloning the Repository
@@ -26,7 +27,8 @@ user@host:~$ git clone git@github.com:MHSeals/roboboat-2022.git catkin_ws
 user@host:~$ cd catkin_ws
 user@host:~$ catkin build
 [a bunch of build message, should all succeed]
-user@host:~$ echo "\nsource /home/user/catkin_ws/devel/setup.bash"  # IMPORTANT!
+user@host:~$ echo "\nsource /home/user/catkin_ws/devel/setup.bash" >> ~/.bashrc  # IMPORTANT!
+user@host:~$ source ~/.bashrc
 ```
 
 Be sure to double check your .bashrc files to see if everything is pointing to the correct `setup.bash` file. This is essential for ROS to find your package and allow using ROS commands e.g. `roscd`, `roslaunch`, `rosrun`, etc.
