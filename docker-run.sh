@@ -10,10 +10,10 @@ SRC_DIR=${SCRIPT_DIR}/src
 
 # define Docker image name
 # we don't need image tag here because it defaults to latest
-IMAGE_NAME=roboboat
+IMAGE_NAME=mhseals/roboboat-2022
 
 # give your container a name
-CONTAINER_NAME=roboboat-container2
+CONTAINER_NAME=roboboat-2022
 
 # check docker if container exists
 CONTAINER_ID=`docker ps -aqf "name=^/${CONTAINER_NAME}$"`

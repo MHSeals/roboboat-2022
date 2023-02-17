@@ -1,1 +1,1 @@
-docker build . -t roboboat:latest
+docker build . -t roboboat-2022:latest

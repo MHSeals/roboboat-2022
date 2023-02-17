@@ -48,9 +48,11 @@ async def check_kill_switch(cube: System):
     try:
         async for rc_channels in cube.telemetry.rc_channels():
             kill_switch = rc_channels.chan6_raw
-            if kill_switch == 100:
+            print(f"Kill Switch status: {kill_switch}")
+            if kill_switch > 0:
                 cube.action.kill()
-
+                print("Killing the boat!")
+            await asyncio.sleep(0.1)
     except asyncio.CancelledError:
         return
 
@@ -58,5 +60,3 @@ async def check_kill_switch(cube: System):
 if __name__ == "__main__":
     # Run the asyncio loop
     asyncio.run(main())
-
-
