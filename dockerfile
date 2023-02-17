@@ -25,3 +25,6 @@ RUN apt-get update && \
 # making sure we have MAVSDK
 # see https://mavsdk.mavlink.io/main/en/python/quickstart.html#install
 RUN python -m pip install --upgrade pip setuptools wheel testresources mavsdk aioconsole
+
+# automatically start in the root directory since our source folder is in /root/src
+RUN echo "cd /root" >> ~/.bashrc
